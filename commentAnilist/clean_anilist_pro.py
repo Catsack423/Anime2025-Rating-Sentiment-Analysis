@@ -52,8 +52,8 @@ def clean_comment(text):
     return text
 
 # กำหนดชื่อไฟล์ที่ต้องการคลีน
-INPUT_FILE = "clean_comment_anilst.json"
-OUTPUT_FILE = "cleaned_anime_comments_pro.json"
+INPUT_FILE = "commentAnilist/clean_comment_anilst.json"
+OUTPUT_FILE = "commentAnilist/cleaned_anime_comments_pro.json"
 
 if os.path.exists(INPUT_FILE):
     with open(INPUT_FILE, "r", encoding="utf-8") as f:
