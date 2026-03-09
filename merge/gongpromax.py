@@ -3,10 +3,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
+# Note: If the above import fails, install vaderSentiment: pip install vaderSentiment Error: matplotlib is not installed. Please install it using: pip install matplotlib
+
 # -----------------------------
 # 1. โหลดข้อมูล JSON
 # -----------------------------
-with open("anime_comments_all.json", "r", encoding="utf-8") as f:
+with open("./merge/anime_comments_all.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 df = pd.DataFrame(data)
@@ -14,7 +16,7 @@ df = pd.DataFrame(data)
 # -----------------------------
 # 2. สร้าง sentiment analyzer
 # -----------------------------
-analyzer = SentimentIntensityAnalyzer()
+
 
 def get_sentiment(text):
     score = analyzer.polarity_scores(text)
@@ -27,6 +29,11 @@ df["sentiment_score"] = df["comment"].apply(get_sentiment)
 # 3. แปลงเป็นคะแนน 0-10
 # -----------------------------
 df["rating"] = (df["sentiment_score"] + 1) * 5
+
+
+
+
+
 
 # -----------------------------
 # 4. แยก genre (กรณีมีหลาย genre)
