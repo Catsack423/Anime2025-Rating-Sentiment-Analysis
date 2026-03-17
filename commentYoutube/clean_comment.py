@@ -80,7 +80,7 @@ for item in data:
         item["comment_text"] = cleaned
         cleaned_data.append(item)
 
-output_file = os.path.join(BASE_DIR, "anime_comments_cleaned_promax.json")
+output_file = os.path.join(BASE_DIR, "anime_comments_cleaned.json")
 
 with open(output_file, "w", encoding="utf-8") as f:
     json.dump(cleaned_data, f, ensure_ascii=False, indent=4)
