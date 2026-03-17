@@ -13,53 +13,28 @@ spam_phrases = [
     "like if you",
 ]
 
-seen_comments = set()
-
 def clean_comment(text):
-
-    original_text = text
-
-    # 1 lowercase
     text = text.lower()
-
-    # 2 remove url
     text = re.sub(r'http\S+|www\S+', '', text)
-
-    # 3 remove emoji / symbols
     text = re.sub(r'[^a-z0-9\s]', ' ', text)
-
-    # 4 normalize repeated letters
     text = re.sub(r'(.)\1{2,}', r'\1\1', text)
-
-    # 5 remove extra spaces
     text = re.sub(r'\s+', ' ', text).strip()
 
-    # 6 remove short comments
     if len(text.split()) < 3:
         return None
 
-    # 7 spam phrase filtering
     for phrase in spam_phrases:
         if phrase in text:
             return None
 
-    # 8 repeated word spam
     if re.search(r'\b(\w+)( \1){2,}', text):
         return None
 
-    # 9 numeric spam
     if sum(c.isdigit() for c in text) > len(text) * 0.5:
         return None
 
-    # 10 abnormal word length
     if any(len(word) > 20 for word in text.split()):
         return None
-
-    # 11 duplicate comment
-    if text in seen_comments:
-        return None
-
-    seen_comments.add(text)
 
     return text
 
@@ -73,9 +48,7 @@ with open(file_path, "r", encoding="utf-8") as f:
 cleaned_data = []
 
 for item in data:
-
     cleaned = clean_comment(item["comment_text"])
-
     if cleaned:
         item["comment_text"] = cleaned
         cleaned_data.append(item)
