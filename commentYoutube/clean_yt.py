@@ -2,7 +2,6 @@ import json
 import re
 import os
 
-# spam words ที่มักเป็น bot
 spam_words = [
     "nice video",
     "great video",
@@ -17,32 +16,24 @@ def clean_comment(text):
 
     text = text.lower()
 
-    # ลบ url
     text = re.sub(r'http\S+|www\S+', '', text)
 
-    # ลบ emoji และตัวอักษรที่ไม่ใช่ english + number
     text = re.sub(r'[^a-z0-9\s]', ' ', text)
 
-    # ลดตัวอักษรซ้ำ เช่น cooooool -> cool
     text = re.sub(r'(.)\1{2,}', r'\1\1', text)
 
-    # ลบช่องว่างเกิน
     text = re.sub(r'\s+', ' ', text).strip()
 
-    # ลบ comment สั้นเกิน
     if len(text.split()) < 3:
         return None
 
-    # ลบ spam words
     for word in spam_words:
         if word in text:
             return None
 
-    # ลบคำซ้ำ เช่น nice nice nice
     if re.search(r'\b(\w+)( \1){2,}', text):
         return None
 
-    # ลบ duplicate comment
     if text in seen_comments:
         return None
 

@@ -39,29 +39,23 @@ def fetch_anime_reviews_json(anime_id, target_n=10):
     return results
 
 def save_to_json_list(new_data, filename="data.json"):
-    # ตรวจสอบว่าไฟล์มีข้อมูลอยู่แล้วหรือไม่
     file_exists = os.path.exists(filename) and os.path.getsize(filename) > 0
     
     if not file_exists:
-        # ถ้าไฟล์ว่าง ให้สร้างลิสต์ใหม่
         with open(filename, "w", encoding="utf-8") as f:
             json.dump(new_data, f, ensure_ascii=False, indent=2)
     else:
-        # ถ้ามีไฟล์อยู่แล้ว ให้ "แงะ" ท้ายไฟล์เพื่อต่อข้อมูล
         with open(filename, "rb+") as f:
-            f.seek(-1, os.SEEK_END) # เลื่อนไปก่อนตัวอักษรสุดท้าย (คือ ])
-            # วนลูปถอยหลังหา ] เผื่อมีเว้นบรรทัด
+            f.seek(-1, os.SEEK_END) 
             while f.read(1) != b']':
                 f.seek(-2, os.SEEK_CUR)
             f.seek(-1, os.SEEK_CUR)
-            f.truncate() # ลบ ] ออก
+            f.truncate() 
             
-            f.write(b",\n") # เติมคอมม่าและขึ้นบรรทัดใหม่
-            # เขียนข้อมูลใหม่ (ตัด [ และ ] ของลิสต์ใหม่ออกเพื่อให้โครงสร้างไม่ซ้อน)
+            f.write(b",\n") 
             content = json.dumps(new_data, ensure_ascii=False, indent=2)[1:-1]
             f.write(content.encode('utf-8'))
-            f.write(b"]") # ปิดท้ายด้วย ] เหมือนเดิม
-
+            f.write(b"]") 
 def main():
     response = requests.get("http://110.164.203.137:9919/anime")
     anime_list = response.json()
@@ -81,10 +75,8 @@ def main():
         reviews = fetch_anime_reviews_json(mal_id, 10)
 
         if reviews:
-            # บันทึกลง data.json แบบต่อ List
             save_to_json_list(reviews)
             
-            # บันทึกสถานะลง rqs.txt
             with open("rqs.txt", "a") as f:
                 f.write(f"{mal_id}\n")
             
