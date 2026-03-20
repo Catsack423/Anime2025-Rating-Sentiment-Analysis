@@ -51,18 +51,31 @@
 ---
 
 
+---
+
 ## 📂 แหล่งข้อมูล (Data Sources)
 
-ข้อมูลทั้งหมดที่นำมาวิเคราะห์ในโปรเจกต์นี้ รวบรวมและอ้างอิงจากแพลตฟอร์มหลักในวงการอนิเมะ เพื่อให้ได้ผลลัพธ์ที่ครอบคลุมและแม่นยำที่สุด:
+ข้อมูลทั้งหมดถูกรวบรวมและอ้างอิงจากแพลตฟอร์มชั้นนำ เพื่อความแม่นยำในการวิเคราะห์:
 
 <p align="center">
-  <img src="alnalysis/myanimelist.png" height="50px" alt="MyAnimeList"> &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="alnalysis/anilist.png" height="50px" alt="AniList"> &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="alnalysis/youtubelogo.png" height="50px" alt="YouTube">
+  <a href="https://myanimelist.net/" target="_blank">
+    <img src="alnalysis/myanimelist.png" height="50px" alt="MyAnimeList">
+  </a> 
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://anilist.co/" target="_blank">
+    <img src="alnalysis/anilist.png" height="50px" alt="AniList">
+  </a> 
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://www.youtube.com/" target="_blank">
+    <img src="alnalysis/youtubelogo.png" height="50px" alt="YouTube">
+  </a>
 </p>
 
-* **MyAnimeList & AniList & YouTube:** ใช้สำหรับดึงข้อมูล Rating, Genre และ Comment ของอนิเมะแต่ละเรื่อง
+> **Note:** คลิกที่โลโก้เพื่อไปยังเว็บไซต์ต้นทาง
 
+---
+
+* **MyAnimeList & AniList & YouTube:** ใช้สำหรับดึงข้อมูล Rating, Genre และ Comment ของอนิเมะแต่ละเรื่อง
 
 ---
 
