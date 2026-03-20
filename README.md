@@ -10,7 +10,7 @@
 
 ### 1. เรตติ้งเฉลี่ยแบ่งตามประเภทอนิเมะ (Average Rating by Genre)
 <p align="center">
-  <img src="alnalysis/grpa05.png" width="800px" alt="Genre Rating Graph">
+  <img src="alnalysis/grap05.png" width="800px" alt="Genre Rating Graph">
 </p>
 
 > **คำอธิบาย:** กราฟแท่งแสดงค่าเฉลี่ยเรตติ้งของอนิเมะในแต่ละแนว (Genre) ช่วยให้เห็นว่าในปี 2025 แนวไหนที่ได้รับความนิยมสูงสุดและครองใจผู้ชมในภาพรวม โดยจะเห็นการเรียงลำดับจากแนวที่เรตติ้งสูงไปหาต่ำ
@@ -49,3 +49,23 @@
 * **Markdown** สำหรับการจัดทำรายงานบน GitHub
 
 ---
+
+
+## 📂 แหล่งข้อมูล (Data Sources)
+
+ข้อมูลทั้งหมดที่นำมาวิเคราะห์ในโปรเจกต์นี้ รวบรวมและอ้างอิงจากแพลตฟอร์มหลักในวงการอนิเมะ เพื่อให้ได้ผลลัพธ์ที่ครอบคลุมและแม่นยำที่สุด:
+
+<p align="center">
+  <img src="alnalysis/myanimelist.png" height="50px" alt="MyAnimeList"> &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="alnalysis/anilist.png" height="50px" alt="AniList"> &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="alnalysis/youtubelogo.png" height="50px" alt="YouTube">
+</p>
+
+* **MyAnimeList & AniList & YouTube:** ใช้สำหรับดึงข้อมูล Rating, Genre และ Comment ของอนิเมะแต่ละเรื่อง
+
+
+---
+
+<p align="center">
+  <i>Created with ❤️ for Anime Community Analysis 2025</i>
+</p>
