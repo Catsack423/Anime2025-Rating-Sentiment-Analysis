@@ -55,17 +55,13 @@ page = checkpoint["page"]
 while year_index < len(YEARS):
     year = YEARS[year_index]
     retry = 0
-
     print(f"\nYear {year} | page {page}")
-
     res = requests.post(
         URL,
         json={"query": QUERY, "variables": {"page": page, "year": year}},
         headers=HEADERS
     )
-
     data = res.json()
-
     if data.get("data") is None:
         retry += 1
         print("block / rate limit")

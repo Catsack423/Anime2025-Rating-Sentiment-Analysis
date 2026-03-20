@@ -22,20 +22,15 @@ def clean_comment(text):
 
     if len(text.split()) < 3:
         return None
-
     for phrase in spam_phrases:
         if phrase in text:
             return None
-
     if re.search(r'\b(\w+)( \1){2,}', text):
         return None
-
     if sum(c.isdigit() for c in text) > len(text) * 0.5:
         return None
-
-    if any(len(word) > 20 for word in text.split()):
+    if any(len(word) > 50 for word in text.split()):
         return None
-
     return text
 
 

@@ -18,7 +18,6 @@ try:
     db = client["Dataen"]
     collection = db["Anilist"]
 
-    # แก้ไขจุดนี้: rows เป็น list อยู่แล้ว ใช้ได้เลย
     if data:
         result = collection.insert_many(data)
         print(f":white_check_mark: Success! Inserted {len(result.inserted_ids)} anime records.")

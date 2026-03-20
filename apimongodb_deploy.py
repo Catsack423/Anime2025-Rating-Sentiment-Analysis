@@ -8,6 +8,8 @@ client = MongoClient("mongodb://localhost:27017/")
 db = client["Dataen"]
 collection = db["AnimeList"]
 collection_Anilist = db["Anilist"]
+collection_youtube = db["youtube"]
+collection_cAnimelist = db["comment_animelist"]
 
 @app.get("/")
 def read_root():
@@ -23,19 +25,15 @@ def get_all_anime():
     animes = list(collection_Anilist.find({}, {"_id": 0}))
     return animes
 
-@app.get("/anime/search")
-def search_anime(title: str):
-    query = {"title": {"$regex": title, "$options": "i"}}
-    results = list(collection.find(query, {"_id": 0}))
-    if not results:
-        raise HTTPException(status_code=404, detail="Anime not found")
-    return results
+@app.get("/youtube", response_model=List[dict])
+def get_all_anime():
+    animes = list(collection_youtube.find({}, {"_id": 0}))
+    return animes
 
-# API สำหรับดึงข้อมูลตาม Season
-@app.get("/anime/season/{season_name}")
-def get_by_season(season_name: str):
-    results = list(collection.find({"season": season_name}, {"_id": 0}))
-    return results
+@app.get("/Animelist", response_model=List[dict])
+def get_all_anime():
+    animes = list(collection_cAnimelist.find({}, {"_id": 0}))
+    return animes
 
 if __name__ == "__main__":
     import uvicorn

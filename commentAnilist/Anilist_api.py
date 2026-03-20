@@ -23,8 +23,6 @@ with open(INPUT_FILE, "r", encoding="utf-8") as f:
 
 anime_batch = anime_all[START_INDEX:START_INDEX + LIMIT]
 
-print(f"Processing {len(anime_batch)} anime ({START_INDEX} → {START_INDEX + len(anime_batch) - 1})")
-
 if os.path.exists(OUTPUT_FILE):
     with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
         rows = json.load(f)
@@ -81,7 +79,6 @@ for i, anime in enumerate(anime_batch, start=START_INDEX + 1):
             continue
 
         threads = thread_data["data"]["Page"]["threads"]
-
         print(f"Threads found: {len(threads)}")
 
         for thread in threads:
