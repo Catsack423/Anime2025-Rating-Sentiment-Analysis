@@ -1,4 +1,4 @@
-# 📊 Anime Genres Rating Analysis 2025
+# 📊 Anime2025-Rating-Sentiment-Analysis
 
 โปรเจกต์วิเคราะห์ทัศนคติและเรตติ้งของอนิเมะในปี 2025 โดยการดึงข้อมูลจาก **Online Platforms (Comments & Threads)** มาประมวลผลโดยใช้
 
