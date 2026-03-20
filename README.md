@@ -8,6 +8,19 @@
 
 > **Objective:** นำ Insight ที่ได้จากเสียงของผู้ชมจริงๆ มาเปรียบเทียบกับสถิติภาพรวม เพื่อค้นหาปัจจัยที่ส่งผลต่อความสำเร็จของอนิเมะแต่ละประเภทในปี 2025
 ---
+## 👥 ผู้จัดทำ (Team Members)
+
+| Profile | ชื่อ-นามสกุล | 
+| :---: | :---:|
+| <a href="https://github.com/Catsack423"><img src="https://github.com/Catsack423.png" width="50px" style="border-radius:50%;" alt="ปิยะพล"></a> |  นายปิยะพล ตุ่นป่า 
+| <a href="https://github.com/SandKingTH"><img src="https://github.com/SandKingTH.png" width="50px" style="border-radius:50%;" alt="พีรพัฒน์"></a>  |  นายพีรพัฒน์ ป้องกันยา 
+| <a href="https://github.com/NongpandarX"><img src="https://github.com/NongpandarX.png" width="50px" style="border-radius:50%;" alt="ธนันชัย "></a> |  นายธนันชัย พันธราช 
+| <a href="https://github.com/nattapong-61"><img src="https://github.com/nattapong-61.png" width="50px" style="border-radius:50%;" alt="ณัฐพงศ์"></a> |  นายณัฐพงศ์ กรธนกิจ 
+|<a href="https://github.com/Santa1357900"><img src="https://github.com/Santa1357900.png" width="50px" style="border-radius:50%;" alt="ปิยะพล"></a>  |  นายธนกร ทองศรี
+
+
+
+
 
 ## 📈 สรุปผลการวิเคราะห์ข้อมูล (Visualized Analysis)
 
